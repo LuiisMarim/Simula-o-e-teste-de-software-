@@ -79,15 +79,6 @@ Logo:
 V(G) = 9 − 8 + 2 = 3
 ```
 
-Verificação alternativa:
-
-```
-nº de decisões + 1
-3 + 1 = 4
-```
-
-Assim, existem **4 caminhos independentes**.
-
 ---
 
 ## 1.4 Caminhos Independentes
