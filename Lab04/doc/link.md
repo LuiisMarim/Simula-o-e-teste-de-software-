@@ -1,5 +1,3 @@
-Aqui está o seu arquivo Markdown completo com todos os diagramas corrigidos para funcionarem no GitHub, **sem alterar nenhuma resposta ou conteúdo**:
-
 ```markdown
 # Atividade 04 — Testes de Software
 
