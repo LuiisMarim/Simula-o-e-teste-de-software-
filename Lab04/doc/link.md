@@ -426,6 +426,18 @@ flowchart TD
 
 ---
 
+
+## 6.4 Def-Use
+
+| Origem  | Operação / Condição | Destino               |
+| ------- | ------------------- | --------------------- |
+| Linha 2 | total = 0           | Linha 10 (total > 10) |
+| Linha 5 | total += n          | Linha 10 (total > 10) |
+| Linha 7 | total -= 1          | Linha 10 (total > 10) |
+
+
+
+
 # Exercício 7 — Fluxo de Dados
 
 ## 7.1 Código
@@ -472,25 +484,6 @@ flowchart TD
     G --> H
 ```
 
----
-
-## 7.3 Fluxo de Dados (Def-Use)
-
-```mermaid
-flowchart LR
-    L2["def total"]
-    L5["def total"]
-    L7["def total"]
-    L6{"uso total"}
-    L8["return total"]
-
-    L2 --> L6
-    L2 --> L8
-    L5 --> L6
-    L5 --> L8
-    L6 --> L7
-    L7 --> L8
-```
 
 ---
 
