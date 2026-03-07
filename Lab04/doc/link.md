@@ -212,31 +212,21 @@ def acesso(idade, membro):
 ```mermaid
 flowchart TD
     N1(["Inicio acesso(idade, membro)"])
-    N2{"idade >= 18 AND membro"}
-    N3["return 'Permitido'"]
-    N4["return 'Negado'"]
+    N2{"idade >= 18?"}
+    N3{"membro?"}
+    N4["return 'Permitido'"]
+    N5["return 'Negado'"]
 
     N1 --> N2
     N2 -- Sim --> N3
-    N2 -- Nao --> N4
+    N2 -- Nao --> N5
+    N3 -- Sim --> N4
+    N3 -- Nao --> N5
 ```
 
 ---
 
-## 3.3 Árvore de Condições
-
-```mermaid
-flowchart TD
-    A{"idade >= 18"}
-    A -- V --> B{"membro"}
-    A -- F --> C["Negado"]
-    B -- V --> D["Permitido"]
-    B -- F --> E["Negado"]
-```
-
----
-
-## 3.4 Casos de Teste
+## 3.3 Casos de Teste
 
 | CT  | idade | membro | retorno   |
 | --- | ----- | ------ | --------- |
