@@ -237,6 +237,10 @@ flowchart TD
 
 ---
 
+## 3.4 Complexidade
+
+V(G) = n de predicados + 1 = 1 + 1 = 2
+
 # Exercício 4 — Teste de Ciclo
 
 ## 4.1 Código
@@ -375,28 +379,37 @@ flowchart TD
     A(["Inicio"])
     B["total = 0"]
     C{"for n"}
-    D{"n > 0 AND par"}
-    E["total += n"]
-    F{"n < 0"}
-    G["total -= 1"]
-    H["continue"]
-    I{"total > 10"}
-    J["return 'Acima'"]
-    K["return 'Abaixo'"]
+    D{"n > 0"}
+    E{"par"}
+    F["total += n"]
+    G{"n < 0"}
+    H["total -= 1"]
+    I["continue"]
+    J{"total > 10"}
+    K["return 'Acima'"]
+    L["return 'Abaixo'"]
 
     A --> B
     B --> C
     C -- Sim --> D
-    C -- Nao --> I
+    C -- Nao --> J
+
     D -- Sim --> E
-    D -- Nao --> F
-    E --> C
-    F -- Sim --> G
-    F -- Nao --> H
-    G --> C
+    D -- Nao --> G
+
+    E -- Sim --> F
+    E -- Nao --> G
+
+    F --> C
+
+    G -- Sim --> H
+    G -- Nao --> I
+
     H --> C
-    I -- Sim --> J
-    I -- Nao --> K
+    I --> C
+
+    J -- Sim --> K
+    J -- Nao --> L
 ```
 
 ---
