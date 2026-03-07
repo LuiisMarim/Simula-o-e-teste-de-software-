@@ -484,6 +484,20 @@ flowchart TD
     G --> H
 ```
 
+## 7.3 Casos de Teste
+
+### All-Defs
+
+| CT | preco | vip |
+|----|------|-----|
+| CT1 | 100 | True |
+
+### All-Uses
+
+| CT | preco | vip |
+|----|------|-----|
+| CT1 | 100 | True |
+| CT2 | 30 | False |
 
 ---
 
