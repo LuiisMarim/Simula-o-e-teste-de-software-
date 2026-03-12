@@ -1,0 +1,37 @@
+{
+    "tests_by_mangled_function_name": {
+        "case.x_soma": [
+            "test/test_case.py::test_soma_negativos",
+            "test/test_case.py::test_soma_positivos"
+        ],
+        "case.x_is_par": [
+            "test/test_case.py::test_is_par_par",
+            "test/test_case.py::test_is_par_impar"
+        ],
+        "case.x_maior": [
+            "test/test_case.py::test_maior_segundo_maior",
+            "test/test_case.py::test_maior_primeiro_maior"
+        ],
+        "case.x_fatorial": [
+            "test/test_case.py::test_fatorial_cinco",
+            "test/test_case.py::test_fatorial_zero",
+            "test/test_case.py::test_fatorial_negativo"
+        ],
+        "case.x_classificar_nota": [
+            "test/test_case.py::test_classificar_nota_aprovado"
+        ]
+    },
+    "duration_by_test": {
+        "test/test_case.py::test_soma_positivos": 0.0005129269993631169,
+        "test/test_case.py::test_soma_negativos": 0.0005079580005258322,
+        "test/test_case.py::test_is_par_par": 0.0004454530003386026,
+        "test/test_case.py::test_is_par_impar": 0.00037394799937828793,
+        "test/test_case.py::test_maior_primeiro_maior": 0.00035269900035928003,
+        "test/test_case.py::test_maior_segundo_maior": 0.00044294799909039284,
+        "test/test_case.py::test_fatorial_zero": 0.0005184880001252168,
+        "test/test_case.py::test_fatorial_cinco": 0.0005189690004954173,
+        "test/test_case.py::test_fatorial_negativo": 0.0004917880000903097,
+        "test/test_case.py::test_classificar_nota_aprovado": 0.00041006600031323615
+    },
+    "stats_time": 0.38071038200000007
+}

@@ -1,0 +1,13 @@
+Enunciado
+
+Desenvolva um programa contendo cinco funções. Em seguida, crie um conjunto de 10 casos de teste utilizando a estrutura pytest para validar o comportamento do programa.
+
+Depois disso, aplique teste de mutação, realizando mutações por substituição de operadores no código original. Execute novamente os testes sobre as versões mutadas do programa e verifique quantas mutações foram detectadas pelos testes.
+
+Realize essa análise de duas formas:
+
+Manual: criando e avaliando as mutações manualmente.
+
+Automatizada: utilizando a ferramenta Mutmut.
+
+Por fim, compare os resultados, indicando quantas mutações foram identificadas pelo conjunto de testes em cada abordagem.
