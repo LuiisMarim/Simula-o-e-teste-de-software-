@@ -7,8 +7,6 @@ Centro Universitário FEI — Prof. Luciano Rossi
 
 ## 1. Resultados dos Testes
 
-Todos os testes foram implementados utilizando **pytest** como framework principal, em vez do `unittest` puro. O `MagicMock` do módulo `unittest.mock` foi mantido para criação de stubs e mocks, pois é amplamente compatível com pytest.
-
 ### Resumo por arquivo de teste
 
 | Arquivo               | Categorias cobertas                                                        | Qtd. testes |
