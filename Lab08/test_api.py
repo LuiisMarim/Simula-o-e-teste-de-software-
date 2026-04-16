@@ -5,7 +5,7 @@ import pytest
 import requests
 
 BASE_URL = os.getenv("BASE_URL", "https://reqres.in/api")
-HEADERS = {"x-api-key": os.getenv("REQRES_API_KEY", "reqres-free-v1")}
+HEADERS = {"x-api-key": os.getenv("REQRES_API_KEY", "reqres_7bb10fad6df04386aed71a0e1b13f574")}
 TIMEOUT = 10
 
 USER_RESOURCE_SCHEMA = {
