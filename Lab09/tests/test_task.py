@@ -28,6 +28,7 @@ def task_valida():
 
 def test_estado_inicial(task_valida):
     """Após criação válida, todos os atributos devem estar corretos e status = PENDENTE."""
+    # Tipo: unitário
     task_valida.validar()  # não deve lançar erro
 
     assert task_valida.id is None
@@ -44,6 +45,7 @@ def test_estado_inicial(task_valida):
 
 def test_titulo_curto_invalido():
     """Título com menos de 3 caracteres deve lançar ValueError."""
+    # Tipo: unitário
     prazo = datetime.now() + timedelta(days=1)
     task = Task(None, "AB", "Descrição", Priority.BAIXA, prazo)
 
@@ -58,6 +60,7 @@ def test_titulo_curto_invalido():
 
 def test_prazo_no_passado_invalido():
     """Prazo com data passada deve lançar ValueError."""
+    # Tipo: unitário
     prazo_passado = datetime.now() - timedelta(days=1)
     task = Task(None, "Tarefa", "Descrição", Priority.MEDIA, prazo_passado)
 
@@ -72,6 +75,7 @@ def test_prazo_no_passado_invalido():
 
 def test_ciclo_vida_transicao_valida(task_valida):
     """Deve ser possível alterar status de PENDENTE para EM_PROGRESSO."""
+    # Tipo: unitário
     assert task_valida.status == Status.PENDENTE  # estado inicial
 
     task_valida.status = Status.EM_PROGRESSO
@@ -86,6 +90,7 @@ def test_ciclo_vida_transicao_valida(task_valida):
 
 def test_ciclo_vida_transicao_invalida(task_valida):
     """Atribuir um valor inválido ao status deve lançar ValueError."""
+    # Tipo: unitário
     with pytest.raises(ValueError):
         task_valida.status = "invalido"  # string fora do enum
 
@@ -97,6 +102,7 @@ def test_ciclo_vida_transicao_invalida(task_valida):
 
 def test_ciclo_vida_transicao_completa(task_valida):
     """Deve ser possível percorrer todas as transições de status válidas."""
+    # Tipo: unitário
     assert task_valida.status == Status.PENDENTE
 
     task_valida.status = Status.EM_PROGRESSO
@@ -112,6 +118,7 @@ def test_ciclo_vida_transicao_completa(task_valida):
 
 def test_titulo_com_exatamente_3_caracteres_valido():
     """Título com exatamente 3 caracteres deve ser considerado válido."""
+    # Tipo: unitário
     prazo = datetime.now() + timedelta(days=1)
     task = Task(None, "abc", "Descrição", Priority.MEDIA, prazo)
 
@@ -127,6 +134,7 @@ def test_titulo_com_exatamente_3_caracteres_valido():
 @pytest.mark.parametrize("prioridade", [Priority.BAIXA, Priority.MEDIA, Priority.ALTA])
 def test_prioridade_atribuida_corretamente(prioridade):
     """Todos os níveis de prioridade devem ser atribuídos corretamente."""
+    # Tipo: unitário
     prazo = datetime.now() + timedelta(days=1)
     task = Task(None, "Tarefa", "Descrição", prioridade, prazo)
 

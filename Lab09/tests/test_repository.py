@@ -45,6 +45,7 @@ def task():
 
 def test_save_atribui_id(repo, task):
     """Após save(), a task deve ter id=1 (primeiro ID atribuído)."""
+    # Tipo: componente
     resultado = repo.save(task)
 
     assert resultado.id == 1  # estado mudou: id foi atribuído
@@ -57,6 +58,7 @@ def test_save_atribui_id(repo, task):
 
 def test_save_chama_storage_add(repo, task, mock_storage):
     """save() deve chamar storage.add exatamente uma vez com (1, task)."""
+    # Tipo: componente
     repo.save(task)
 
     mock_storage.add.assert_called_once_with(1, task)  # mock com assert
@@ -69,6 +71,7 @@ def test_save_chama_storage_add(repo, task, mock_storage):
 
 def test_find_by_id_usa_storage(repo, task, mock_storage):
     """find_by_id() deve delegar ao storage.get() e retornar o objeto correto."""
+    # Tipo: componente
     mock_storage.get.return_value = task  # stub: configura retorno fixo
 
     resultado = repo.find_by_id(1)
@@ -83,6 +86,7 @@ def test_find_by_id_usa_storage(repo, task, mock_storage):
 
 def test_sequencia_save_e_find_by_id(repo, task, mock_storage):
     """Após save(), find_by_id() deve retornar a mesma task salva."""
+    # Tipo: componente
     # Configura stub: storage.get retorna a task após ser salva
     mock_storage.get.return_value = task
 
@@ -102,6 +106,7 @@ def test_sequencia_save_e_find_by_id(repo, task, mock_storage):
 
 def test_find_all_retorna_lista_vazia(repo, mock_storage):
     """Quando o storage não tem itens, find_all() deve retornar lista vazia."""
+    # Tipo: componente
     mock_storage.get_all.return_value = []  # stub: storage vazio
 
     resultado = repo.find_all()
@@ -115,6 +120,7 @@ def test_find_all_retorna_lista_vazia(repo, mock_storage):
 
 def test_delete_chama_storage_delete(repo, mock_storage):
     """delete() deve chamar storage.delete exatamente uma vez com o ID correto."""
+    # Tipo: componente
     mock_storage.delete.return_value = True  # stub: retorna sucesso
 
     resultado = repo.delete(1)
@@ -130,6 +136,7 @@ def test_delete_chama_storage_delete(repo, mock_storage):
 
 def test_save_incrementa_id_sequencialmente(mock_storage):
     """Cada chamada a save() deve atribuir IDs sequenciais (1, 2, 3...)."""
+    # Tipo: componente
     repo = TaskRepository(mock_storage)
     prazo = datetime.now() + timedelta(days=1)
 
@@ -152,6 +159,7 @@ def test_save_incrementa_id_sequencialmente(mock_storage):
 
 def test_find_by_id_retorna_none_quando_nao_existe(repo, mock_storage):
     """find_by_id() deve retornar None quando o ID não existe no storage."""
+    # Tipo: componente
     mock_storage.get.return_value = None  # stub: task não encontrada
 
     resultado = repo.find_by_id(999)
